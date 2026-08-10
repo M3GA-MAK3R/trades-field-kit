@@ -76,7 +76,7 @@ Each "flap" of the umbrella is a self-contained reference panel. Print, fold, an
 |-----------|-------------|
 | Too high (>15-20°F) | Undercharged, restricted metering device, low airflow |
 | Too low (<5-10°F) | Overcharged, metering device overfeeding, high airflow |
-| Normal (8-12°F fixed, 10-14°F TXV) | System operating correctly |
+| Normal (varies by system) | Target varies by indoor/outdoor conditions and manufacturer chart — fixed orifice targets differ from TXV. Always check manufacturer specs. |
 
 ### Subcooling (Condenser Performance)
 **Formula:** Subcooling = Saturated Liquid Temp − Liquid Line Temp
@@ -263,9 +263,9 @@ Thermostat set to HEAT and above room temp?
 
 ### Pressure Washing Maintenance Checklist
 - [ ] Cover all electrical components
-- [ ] Set pressure ≤ 1500 PSI for condenser coils
+- [ ] Use low pressure with wide-fan nozzle; prefer garden-hose pressure when possible
 - [ ] Spray top-down on condenser, bottom-up is OK for evaporator
-- [ ] Use coil cleaner — acid for condenser, alkaline for evaporator
+- [ ] Use manufacturer-approved coil cleaner; follow label instructions
 - [ ] Rinse thoroughly
 - [ ] Allow to dry before re-energizing
 - [ ] Check coil fins — straighten with fin comb if bent

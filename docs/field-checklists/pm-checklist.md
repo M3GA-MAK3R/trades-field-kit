@@ -47,9 +47,9 @@
 - [ ] Wear: safety glasses, rain gear, slip-resistant boots
 
 ### Condenser Coil Cleaning
-1. Apply coil cleaner (acid-based for outdoor coils)
-2. Let dwell 5-10 minutes (do not let dry)
-3. Spray top-down at 45° angle, ≤1500 PSI
+1. Apply manufacturer-approved coil cleaner; follow label instructions
+2. Let dwell per cleaner directions (do not let dry)
+3. Use low pressure with wide-fan nozzle at 45° angle
 4. Keep nozzle 6-8 inches from fins
 5. Rinse until water runs clear
 6. Inspect fins — straighten with fin comb
@@ -57,7 +57,7 @@
 
 ### Evaporator Coil Cleaning
 1. Access indoor coil (remove panel, use drop cloth)
-2. Apply coil cleaner (alkaline/no-rinse for indoor)
+2. Apply coil cleaner per manufacturer label instructions
 3. Let dwell per manufacturer instructions
 4. Spray bottom-up at low pressure if accessible
 5. Rinse if cleaner requires it
