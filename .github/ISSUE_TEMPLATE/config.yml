@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: "📖 Read the Field Reference"
+    url: https://github.com/M3GA-MAK3R/trades-field-kit/blob/main/docs/umbrella-panels.md
+    about: Browse the 8-panel Handy Helper Umbrella field reference before opening an issue
+  - name: "⚡ Quick Calculator Help"
+    url: https://github.com/M3GA-MAK3R/trades-field-kit/tree/main/calculators
+    about: View calculator usage and examples
+  - name: "🚨 Emergency Safety Resources"
+    url: https://www.osha.gov/control-hazardous-energy
+    about: OSHA lockout/tagout standards — always de-energize before working on equipment

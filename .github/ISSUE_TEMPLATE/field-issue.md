@@ -1,0 +1,175 @@
+name: "🔧 Equipment / Field Issue"
+description: "Report an HVAC equipment issue, troubleshooting roadblock, or incorrect reference value"
+title: "[FIELD] <brief description of equipment or issue>"
+labels: ["field-issue", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Field Tech Issue Report
+        
+        Use this template when you're stuck on a service call, found an incorrect
+        reference value in the umbrella guide, or need help diagnosing equipment.
+        
+        **Safety first:** De-energize and verify before touching any equipment.
+        This repo is for reference only — always consult manufacturer manuals
+        and local code.
+        
+  - type: dropdown
+    id: equipment-type
+    attributes:
+      label: Equipment Type
+      description: What type of equipment are you working on?
+      options:
+        - Central AC (split system)
+        - Heat Pump
+        - Furnace (gas)
+        - Furnace (electric)
+        - Mini-Split / Ductless
+        - Package Unit (Rooftop)
+        - Refrigeration (commercial)
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: brand-model
+    attributes:
+      label: Brand & Model
+      description: Manufacturer and model number from the nameplate (if available)
+      placeholder: "e.g., Carrier 24ACC6, Goodman GSX14, Trane XR16"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: refrigerant
+    attributes:
+      label: Refrigerant
+      options:
+        - R-410A
+        - R-32
+        - R-22
+        - R-134a
+        - R-454B
+        - Unknown
+        - N/A
+    validations:
+      required: false
+
+  - type: dropdown
+    id: symptom
+    attributes:
+      label: Primary Symptom
+      description: What's the main issue?
+      options:
+        - No cooling
+        - No heating
+        - Short cycling
+        - Tripping breaker
+        - Freezing up (coil ice)
+        - Noisy operation
+        - Leaking water / drain issue
+        - Not blowing air
+        - Running but not conditioning
+        - Error code / fault on board
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: readings
+    attributes:
+      label: Field Readings
+      description: Enter any measurements you've taken. Delete rows that don't apply.
+      value: |
+        | Measurement | Value |
+        |------------|-------|
+        | Suction pressure | ______ PSIG |
+        | Head pressure | ______ PSIG |
+        | Suction line temp | ______ °F |
+        | Liquid line temp | ______ °F |
+        | Superheat | ______ °F |
+        | Subcooling | ______ °F |
+        | Outdoor ambient | ______ °F |
+        | Indoor return temp | ______ °F |
+        | Supply temp | ______ °F |
+        | Delta-T | ______ °F |
+        | Compressor amps | ______ A |
+        | Condenser fan amps | ______ A |
+        | Capacitor MFD (comp) | ______ |
+        | Capacitor MFD (fan) | ______ |
+        | Voltage (L1-L2) | ______ V |
+        | Voltage (L1-G) | ______ V |
+        | Voltage (L2-G) | ______ V |
+    validations:
+      required: false
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What's Happening?
+      description: Describe the situation in plain language. What did you observe? What have you tried so far?
+      placeholder: |
+        Customer called for no cooling. Outdoor unit not running. Checked breaker —
+        it's on. Contactor not pulling in. 24V at transformer output. Y from stat
+        is energized. Float switch not tripped...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-taken
+    attributes:
+      label: Steps Already Taken
+      description: What troubleshooting have you done so far?
+      placeholder: |
+        - Checked thermostat (set to COOL, below room temp, display active)
+        - Verified breaker and disconnect are on
+        - Tested 24V at transformer (got 27V)
+        - Checked contactor (no click, no 24V at coil)
+        - Discharged capacitor and tested MFD
+    validations:
+      required: false
+
+  - type: dropdown
+    id: power-state
+    attributes:
+      label: Power State
+      description: Is the equipment currently de-energized?
+      options:
+        - "Yes — de-energized and locked out"
+        - "Yes — de-energized, not locked out"
+        - "No — still energized (STOP: de-energize before proceeding)"
+        - "N/A — question about reference content"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety Confirmation
+      description: Confirm the following before submitting
+      options:
+        - label: I have de-energized the equipment or am only asking a reference question
+          required: true
+        - label: I have verified de-energized with a meter (if working on equipment)
+          required: false
+        - label: I understand this is a community reference, not a substitute for manufacturer manuals or code
+          required: true
+
+  - type: textarea
+    id: photos
+    attributes:
+      label: Photos / Nameplate
+      description: Attach photos of the nameplate, wiring, or relevant components if possible. Drag and drop or paste image links.
+      placeholder: "Drag and drop images here, or paste links to screenshots of gauge readings, nameplate, etc."
+    validations:
+      required: false
+
+  - type: input
+    id: location
+    attributes:
+      label: General Location (optional)
+      description: City/state or region — helps with code considerations
+      placeholder: "e.g., Richmond, VA"
+    validations:
+      required: false
