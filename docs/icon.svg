@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="96" fill="#01696F"/>
+  <g fill="none" stroke="#FFFFFF" stroke-width="24" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Umbrella canopy -->
+    <path d="M 128 240 Q 256 120 384 240" fill="#4F98A3" stroke="#FFFFFF"/>
+    <path d="M 128 240 Q 192 180 256 240" fill="#4F98A3"/>
+    <path d="M 256 240 Q 320 180 384 240" fill="#4F98A3"/>
+    <!-- Umbrella panels -->
+    <line x1="192" y1="200" x2="192" y2="240"/>
+    <line x1="256" y1="180" x2="256" y2="240"/>
+    <line x1="320" y1="200" x2="320" y2="240"/>
+    <!-- Handle -->
+    <line x1="256" y1="240" x2="256" y2="360"/>
+    <path d="M 256 360 Q 256 400 296 400 Q 320 400 320 376" stroke-width="20"/>
+    <!-- Top spike -->
+    <line x1="256" y1="180" x2="256" y2="150" stroke-width="16"/>
+  </g>
+  <!-- Wrench icon overlay -->
+  <g transform="translate(340, 340) scale(0.8)">
+    <circle cx="64" cy="64" r="60" fill="#DA7101"/>
+    <path d="M 40 88 L 64 64 L 56 56 L 80 32 A 28 28 0 1 0 96 48 L 72 72 L 80 80 L 56 104 Z" fill="#FFFFFF"/>
+  </g>
+</svg>

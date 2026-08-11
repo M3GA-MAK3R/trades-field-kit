@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Field Kit">
+  <meta name="theme-color" content="#01696F">
+  <title>Trades Field Kit</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    :root {
+      --bg: #F7F6F2;
+      --surface: #F9F8F5;
+      --border: #D4D1CA;
+      --text: #28251D;
+      --muted: #7A7974;
+      --primary: #01696F;
+      --primary-hover: #0C4E54;
+      --warning: #964219;
+      --success: #437A22;
+      --orange: #DA7101;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      min-height: 100dvh;
+      padding: env(safe-area-inset-top) 16px env(safe-area-inset-bottom);
+      overscroll-behavior: none;
+    }
+    header {
+      padding: 20px 0 16px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: -0.5px;
+    }
+    header p {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px 14px;
+      text-decoration: none;
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.1s, background 0.15s;
+      min-height: 110px;
+      justify-content: center;
+    }
+    .card:active { transform: scale(0.96); background: #EFEEEA; }
+    .card .icon { font-size: 28px; line-height: 1; }
+    .card .label { font-size: 13px; font-weight: 600; text-align: center; }
+    .card .sub { font-size: 11px; color: var(--muted); text-align: center; }
+    .card.wide { grid-column: 1 / -1; flex-direction: row; justify-content: flex-start; padding: 16px; gap: 14px; }
+    .card.wide .icon { font-size: 24px; }
+    .card.wide .label { font-size: 15px; }
+    .card.primary { background: var(--primary); border-color: var(--primary); color: white; }
+    .card.primary:active { background: var(--primary-hover); }
+    .card.primary .sub { color: rgba(255,255,255,0.75); }
+    .card.warn { border-color: var(--warning); }
+    .section-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--muted);
+      margin: 20px 0 8px;
+      padding-left: 4px;
+    }
+    .flaps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      margin-top: 4px;
+    }
+    .flap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 4px;
+      text-align: center;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 10px;
+      font-weight: 600;
+      line-height: 1.2;
+      transition: transform 0.1s;
+    }
+    .flap:active { transform: scale(0.94); }
+    .flap .num {
+      display: block;
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 2px;
+    }
+    .safety {
+      margin-top: 20px;
+      background: #FFF5F0;
+      border: 1px solid var(--warning);
+      border-radius: 12px;
+      padding: 14px;
+      text-align: center;
+    }
+    .safety .icon { font-size: 20px; }
+    .safety p { font-size: 12px; color: var(--warning); font-weight: 600; margin-top: 4px; }
+    .safety a { color: var(--warning); text-decoration: underline; }
+    footer {
+      text-align: center;
+      padding: 20px 0 8px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+    footer a { color: var(--primary); text-decoration: none; }
+    .install-hint {
+      display: none;
+      background: var(--primary);
+      color: white;
+      border-radius: 12px;
+      padding: 14px;
+      margin-top: 16px;
+      text-align: center;
+      font-size: 13px;
+    }
+    .install-hint.show { display: block; }
+    .install-hint b { display: block; margin-bottom: 4px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Trades Field Kit</h1>
+  <p>Handy Helper Umbrella — HVAC & Electrical</p>
+</header>
+
+<div class="install-hint" id="installHint">
+  <b>📱 Add to Home Screen</b>
+  Tap the Share button, then "Add to Home Screen" for app-like access.
+</div>
+
+<div class="grid">
+  <a class="card primary wide" href="https://github.com/M3GA-MAK3R/trades-field-kit/issues/new?template=field-issue.yml">
+    <span class="icon">🔧</span>
+    <div>
+      <div class="label">File Field Issue</div>
+      <div class="sub">Equipment, readings, symptoms</div>
+    </div>
+  </a>
+  <a class="card" href="https://github.com/M3GA-MAK3R/trades-field-kit/issues/new?template=feature-request.yml">
+    <span class="icon">💡</span>
+    <div class="label">Request Feature</div>
+    <div class="sub">New calculator or checklist</div>
+  </a>
+  <a class="card" href="https://github.com/M3GA-MAK3R/trades-field-kit/issues">
+    <span class="icon">📋</span>
+    <div class="label">View Issues</div>
+    <div class="sub">All open & closed</div>
+  </a>
+  <a class="card" href="https://github.com/M3GA-MAK3R/trades-field-kit/blob/main/docs/umbrella-panels.md">
+    <span class="icon">🌂</span>
+    <div class="label">Field Reference</div>
+    <div class="sub">8-panel guide</div>
+  </a>
+  <a class="card" href="https://github.com/M3GA-MAK3R/trades-field-kit/raw/main/Handy_Helper_Umbrella_Field_Reference.pdf">
+    <span class="icon">📄</span>
+    <div class="label">Download PDF</div>
+    <div class="sub">Printable reference</div>
+  </a>
+  <a class="card" href="https://github.com/M3GA-MAK3R/trades-field-kit/tree/main/calculators">
+    <span class="icon">📐</span>
+    <div class="label">Calculators</div>
+    <div class="sub">Superheat, Ohm's, VD</div>
+  </a>
+  <a class="card" href="https://github.com/M3GA-MAK3R/trades-field-kit/blob/main/docs/field-checklists/pm-checklist.md">
+    <span class="icon">✅</span>
+    <div class="label">Checklists</div>
+    <div class="sub">PM, no-cool, safety</div>
+  </a>
+</div>
+
+<div class="section-title">Umbrella Flaps</div>
+<div class="flaps">
+  <a class="flap" href="https://github.com/M3GA-MAK3R/trades-field-kit/blob/main/docs/umbrella-panels.md#flap-1-safety-first"><span class="num">1</span>Safety</a>
+  <a class="flap" href="https://github.com/M3GA-MAK3R/trades-field-kit/blob/main/docs/umbrella-panels.md#flap-2-refrigeration-cycle"><span class="num">2</span>Refrig</a>
+  <a class="flap" href="https://github.com/M3GA-MAK3R/trades-field-kit/blob/main/docs/umbrella-panels.md#flap-3-superheat--subcooling"><span class="num">3</span>SU/SC</a>
+  <a class="flap" href="https://github.com/M3GA-MAK3R/trades-field-kit/blob/main/docs/umbrella-panels.md#flap-4-thermostat-low-voltage-wiring"><span class="num">4</span>Stat</a>
+  <a class="flap" href="https://github.com/M3GA-MAK3R/trades-field-kit/blob/main/docs/umbrella-panels.md#flap-5-contactor--capacitor-motor-circuits"><span class="num">5</span>Contact</a>
+  <a class="flap" href="https://github.com/M3GA-MAK3R/trades-field-kit/blob/main/docs/umbrella-panels.md#flap-6-heat-pump-sequence--defrost-basics"><span class="num">6</span>HP/Def</a>
+  <a class="flap" href="https://github.com/M3GA-MAK3R/trades-field-kit/blob/main/docs/umbrella-panels.md#flap-7-electrical-pocket-formulas"><span class="num">7</span>Elec</a>
+  <a class="flap" href="https://github.com/M3GA-MAK3R/trades-field-kit/blob/main/docs/umbrella-panels.md#flap-8-troubleshooting-decision-flow"><span class="num">8</span>Tshoot</a>
+</div>
+
+<div class="safety">
+  <div class="icon">⚠️</div>
+  <p>De-energize & verify before touching equipment · <a href="https://www.osha.gov/control-hazardous-energy">OSHA LOTO</a></p>
+</div>
+
+<footer>
+  <a href="https://github.com/M3GA-MAK3R/trades-field-kit">M3GA-MAK3R/trades-field-kit</a><br>
+  MIT License · Verify against manufacturer specs & local code
+</footer>
+
+<script>
+  // Show install hint for iOS Safari
+  if (window.navigator.standalone === false) {
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    const isAndroid = /Android/.test(navigator.userAgent);
+    if (isIOS || isAndroid) {
+      document.getElementById('installHint').classList.add('show');
+      setTimeout(() => {
+        document.getElementById('installHint').classList.remove('show');
+      }, 8000);
+    }
+  }
+
+  // Service worker registration
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js').catch(() => {});
+  }
+</script>
+
+</body>
+</html>
