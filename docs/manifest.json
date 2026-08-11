@@ -2,7 +2,7 @@
   "name": "Trades Field Kit",
   "short_name": "Field Kit",
   "description": "HVAC & electrical field reference, calculators, and issue filing for skilled trades",
-  "start_url": "../docs/index.html",
+  "start_url": "index.html",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#F7F6F2",
