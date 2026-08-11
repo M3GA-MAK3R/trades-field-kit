@@ -28,10 +28,52 @@ trades-field-kit/
 │   ├── service-note.md
 │   ├── customer-summary.md
 │   └── parts-list.md
+├── scripts/                          # CLI helper scripts
+│   └── file-issue.sh                # Interactive issue filing from terminal
 ├── skill/                            # Perplexity Computer skill
 │   └── trades-field-work.skill.md
 └── references/
     └── sources.md                    # Public source citations
+```
+
+## Filing Issues
+
+Three ways to file an issue — pick what works from your phone or desk:
+
+### 1. Interactive CLI Script (best for terminal/Termux)
+
+```bash
+# Clone and run the interactive script
+./scripts/file-issue.sh
+```
+
+Walks you through equipment type, symptom, readings, and power state
+with numbered menus. Assembles a structured issue and submits via `gh`.
+
+### 2. Markdown Template (CLI)
+
+```bash
+gh issue create --repo M3GA-MAK3R/trades-field-kit \
+  --template field-issue-cli.md
+```
+
+Opens your editor pre-filled with the field issue template. Edit, save, quit.
+
+Note: YAML interactive forms (dropdowns/checkboxes) do NOT work with the
+`gh` CLI — only the markdown template does.
+
+### 3. Browser / GitHub Mobile App
+
+- **Template chooser:** [github.com/M3GA-MAK3R/trades-field-kit/issues/new/choose](https://github.com/M3GA-MAK3R/trades-field-kit/issues/new/choose)
+- **Direct to field issue form:** [github.com/M3GA-MAK3R/trades-field-kit/issues/new?template=field-issue.yml](https://github.com/M3GA-MAK3R/trades-field-kit/issues/new?template=field-issue.yml)
+
+The browser and mobile app render the YAML forms as interactive dropdowns,
+checkboxes, and required fields — the full experience.
+
+### Or open in browser from CLI
+
+```bash
+gh issue create --repo M3GA-MAK3R/trades-field-kit --web
 ```
 
 ## Quick Start
