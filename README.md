@@ -36,6 +36,12 @@ trades-field-kit/
     └── sources.md                    # Public source citations
 ```
 
+## Quick Links
+
+- **Mobile Quick Start:** [docs/MOBILE-QUICKSTART.md](docs/MOBILE-QUICKSTART.md) — bookmark on your phone
+- **File an Issue:** [New Issue](https://github.com/M3GA-MAK3R/trades-field-kit/issues/new/choose)
+- **PDF Field Reference:** [Handy Helper Umbrella PDF](Handy_Helper_Umbrella_Field_Reference.pdf)
+
 ## Filing Issues
 
 Three ways to file an issue — pick what works from your phone or desk:

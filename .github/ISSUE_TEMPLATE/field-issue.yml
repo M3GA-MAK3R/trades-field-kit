@@ -1,6 +1,6 @@
 name: "🔧 Equipment / Field Issue"
 description: "Report an HVAC equipment issue, troubleshooting roadblock, or incorrect reference value"
-title: "[FIELD] <brief description of equipment or issue>"
+title: "[FIELD] Brief description — e.g., Carrier 24ACC6 no cooling, contactor not pulling in"
 labels: ["field-issue", "triage"]
 body:
   - type: markdown
