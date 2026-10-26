@@ -142,22 +142,21 @@ def make_panel(num, title, subtitle, content_flows, color, sources=None):
 
 # --- Panel 1: Safety First ---
 panel1 = [
-    Paragraph("Lockout/Tagout (LOTO)<super>1</super>", heading),
-    Paragraph("1. <b>Notify</b> anyone affected", body_small),
-    Paragraph("2. <b>Shut down</b> by normal means", body_small),
-    Paragraph("3. <b>Isolate</b> &#8212; disconnect/break energy source", body_small),
-    Paragraph("4. <b>Lock out</b> &#8212; apply individual lock + tag", body_small),
-    Paragraph("5. <b>Verify de-energized</b> &#8212; test meter on known source first, then circuit", body_small),
-    Paragraph("6. <b>Release</b> &#8212; only the person who applied the lock removes it", body_small),
+    Paragraph("Discussion Aid, Not a Work Procedure<super>1</super>", heading),
+    Paragraph("Reinforce discipline, work ethic and communication. Does not replace official paperwork, training, authorization or equipment-specific procedures. Keep job records private.", body_small),
+    Paragraph("Use the employer's applicable energy-control procedure. Discuss all sources, stored energy, reaccumulation, verification, roles and group/shift continuity. A disconnect or meter reading alone does not establish safety.", body_small),
+    Paragraph("Refer required energized electrical testing to qualified, authorized personnel. Follow approved inspection, personnel-clearance, device-removal, notification and restart procedures; this aid does not authorize removal of another person's lock.", body_small),
     Spacer(1, 3),
     Paragraph("Wet-Work Precautions<super>1</super>", heading),
-    Paragraph("<b>Never</b> pressure wash energized electrical components. Cover motors, contactors, control boards. Keep water away from disconnects/panels. Allow equipment to dry before re-energizing. Use GFCI-protected power.", body_small),
+    Paragraph("Do not wash energized equipment or direct liquid into electricals. Follow exact equipment/coil restrictions. Covers, GFCIs and drying do not substitute for isolation. Electrical tools must suit the location.", body_small),
     Spacer(1, 3),
-    Paragraph("PPE Checklist", heading),
-    Paragraph("Safety glasses/face shield | Electrical-rated gloves (Class 0) | Hearing protection | EH-rated boots | Long sleeves for brazing", body_small),
+    Paragraph("Task-Specific Protection<super>11</super>", heading),
+    Paragraph("Select shock/arc, eye/face, chemical, hearing, foot and other protection from the assessed hazards. No universal glove class or clothing list establishes a complete protective system.", body_small),
 ]
 sources1 = [
-    '1. OSHA Control of Hazardous Energy: <a href="https://www.osha.gov/control-hazardous-energy" color="#01696F">https://www.osha.gov/control-hazardous-energy</a>',
+    '1. OSHA hazardous energy: <a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.147" color="#01696F">https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.147</a>',
+    'Electrical work: <a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.333" color="#01696F">https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.333</a>',
+    '11. PPE: <a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.335" color="#01696F">https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.335</a>',
 ]
 
 # --- Panel 2: Refrigeration Cycle ---
@@ -193,29 +192,28 @@ sources2 = [
 # --- Panel 3: Superheat & Subcooling ---
 panel3 = [
     Paragraph("Superheat = Suction Line Temp &#8722; Sat. Suction Temp<super>4</super>", body),
-    Paragraph("Measures evaporator performance", body_small),
+    Paragraph("Use existing authorized readings with paired pressure/temperature locations and identified refrigerant.", body_small),
     Spacer(1, 2),
     Table([
-        ["Superheat", "Likely Cause"],
-        ["High (>15-20F)", "Undercharge, restriction, low airflow"],
-        ["Low (<5-10F)", "Overcharge, overfeeding, high airflow"],
-        ["Normal", "Target varies by conditions and manufacturer chart"],
+        ["Consideration", "Required context"],
+        ["Target", "Equipment method and metering device"],
+        ["Conditions", "Operating mode, airflow, load, stability"],
     ], colWidths=[100, 200]),
     Spacer(1, 4),
     Paragraph("Subcooling = Sat. Liquid Temp &#8722; Liquid Line Temp<super>4</super>", body),
-    Paragraph("Measures condenser performance", body_small),
+    Paragraph("Compare with the model-specific target; no universal normal range is supplied.", body_small),
     Spacer(1, 2),
     Table([
-        ["Subcooling", "Likely Cause"],
-        ["High (>15-20F)", "Overcharge, liquid line restriction"],
-        ["Low (<5-10F)", "Undercharge, condenser airflow issue"],
-        ["Normal (8-12F)", "Verify with manufacturer specs"],
+        ["Consideration", "Required context"],
+        ["PT selection", "Correct refrigerant, units and phase"],
+        ["Interpretation", "Not a one-reading charge diagnosis"],
     ], colWidths=[100, 200]),
     Spacer(1, 3),
-    Paragraph("Steps: Measure line temps | Read gauges | PT chart for sat temps | Calculate | Compare to mfr specs", body_small),
+    Paragraph("Calculate from authorized data, then use the manufacturer's diagnostic method. Pressure patterns alone do not authorize charge adjustment. Confirm applicable Section 608 qualifications before refrigerant work.", body_small),
 ]
 sources3 = [
     '4. HVAC School - Superheat & Subcooling: <a href="https://www.hvacrschool.com/" color="#01696F">https://www.hvacrschool.com/</a>',
+    'EPA certification: <a href="https://www.epa.gov/section608/section-608-technician-certification-requirements" color="#01696F">https://www.epa.gov/section608/section-608-technician-certification-requirements</a>',
 ]
 
 # --- Panel 4: Thermostat Low-Voltage Wiring ---
@@ -251,7 +249,7 @@ panel5 = [
     Paragraph("Contactor<super>6</super>", heading),
     Paragraph("<b>Coil:</b> 24V from stat Y -> safety switches -> contactor coil", body_small),
     Paragraph("<b>Contacts:</b> 240V through contacts to compressor + condenser fan", body_small),
-    Paragraph("<b>Test:</b> Click sound, 24V across coil, ~0V across closed contacts", body_small),
+    Paragraph("Concepts only; use the exact schematic. A click or open contactor does not prove isolation. Refer required energized testing to qualified, authorized personnel.", body_small),
     Spacer(1, 2),
     Paragraph("Capacitor Terminals", heading),
     Table([
@@ -262,13 +260,14 @@ panel5 = [
     ], colWidths=[80, 220]),
     Spacer(1, 3),
     Paragraph("WARNING: Capacitors hold charge even when power is off!", warning_style),
-    Paragraph("Discharge with 20k-ohm resistor across terminals. Wait 30s, short again. Never use a screwdriver.", body_small),
+    Paragraph("Use the manufacturer's stored-energy discharge, waiting and verification procedure with approved rated tools. No universal resistor value or wait time; do not improvise terminal shorting.<super>1</super>", body_small),
     Spacer(1, 2),
     Paragraph("Testing", heading),
-    Paragraph("<b>Visual:</b> Bulging/leaking = replace | <b>MFD:</b> +/-10% of rating | <b>Ground:</b> Terminal to case = OL (infinite)", body_small),
+    Paragraph("Inspect/test only under the applicable isolation and stored-energy procedure. Compare MFD with component marking and manufacturer tolerance. Continuity alone does not certify insulation or safe operation.", body_small),
 ]
 sources5 = [
     '6. HVAC School: <a href="https://www.hvacrschool.com/" color="#01696F">https://www.hvacrschool.com/</a>',
+    'Stored energy: <a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.333" color="#01696F">https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.333</a>',
 ]
 
 # --- Panel 6: Heat Pump & Defrost ---
@@ -336,21 +335,21 @@ panel8 = [
     Paragraph("+-- No -> Check stat, batteries, display", body_small),
     Paragraph("+-- Yes -> Outdoor unit running?", body_small),
     Paragraph("   +-- No -> Breaker -> disconnect -> contactor -> cap -> compressor", body_small),
-    Paragraph("   +-- Yes -> Check suction/head pressure", body_small),
-    Paragraph("      +-- Low S, low H -> Low charge / leak", body_small),
-    Paragraph("      +-- High S, high H -> Restricted airflow / overcharge", body_small),
-    Paragraph("      +-- Low S, high H -> Restriction (filter drier, TXV)", body_small),
-    Paragraph("      +-- High S, low H -> Bad compressor valves", body_small),
+    Paragraph("   +-- Yes -> Compare authorized readings, airflow, load and mode", body_small),
+    Paragraph("      +-- Confirm refrigerant, paired locations and stable conditions", body_small),
+    Paragraph("      +-- Follow the manufacturer's diagnostic method", body_small),
+    Paragraph("      +-- Pressure patterns alone do not prove a fault or justify charging", body_small),
     Spacer(1, 2),
     Paragraph("Short Cycling", heading),
     Paragraph("Check: stat location (drafts), filter, coil freeze-up, low charge, oversized equip, pressure switch", body_small),
     Spacer(1, 2),
-    Paragraph("Pressure Washing PM<super>1</super>", heading),
-    Paragraph("Cover electricals | Use low pressure, wide-fan nozzle | Prefer garden-hose pressure when possible | Manufacturer-approved coil cleaner per label | Top-down for condenser | Rinse thoroughly | Dry before re-energizing | Straighten fins with comb", body_small),
+    Paragraph("Coil Cleaning Discussion<super>12</super>", heading),
+    Paragraph("Use exact coil/equipment instructions for chemicals, pressure, distance, direction and tools. Do not assume pressure washers or chemicals are permitted. Follow approved isolation and return-to-service procedures.", body_small),
 ]
 sources8 = [
     '9. Anthony\'s Cool School: <a href="https://hvac.anthonyscoolschool.com/" color="#01696F">https://hvac.anthonyscoolschool.com/</a>',
     '   OSHA Safety: <a href="https://www.osha.gov/control-hazardous-energy" color="#01696F">https://www.osha.gov/control-hazardous-energy</a>',
+    '12. TMAL-specific cleaning restrictions: <a href="https://docs.johnsoncontrols.com/ductedsystems/api/khub/documents/TUg78wHItRmyi4kpDTod4w/content" color="#01696F">https://docs.johnsoncontrols.com/ductedsystems/api/khub/documents/TUg78wHItRmyi4kpDTod4w/content</a>',
 ]
 
 # --- Build PDF ---

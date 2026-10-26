@@ -9,7 +9,9 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "calculators"))
 
-from pt_data import SAT_TEMP_R410A, interpolate_sat_temp
+from pt_data import (
+    PT_SOURCES, REFRIGERANTS, SAT_TEMP_R410A, interpolate_sat_temp,
+)
 
 
 def load_calculator(name):
@@ -75,7 +77,7 @@ class PTLookupTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             interpolate_sat_temp({}, 120)
 
-    def test_legacy_tables_also_bounded_and_interpolated(self):
+    def test_r22_and_r134a_bounded_and_interpolated(self):
         for module in (SUPERHEAT, SUBCOOLING):
             for refrigerant in ("R22", "R134A"):
                 chart = module.REFRIGERANTS[refrigerant]
@@ -87,6 +89,50 @@ class PTLookupTests(unittest.TestCase):
                 for pressure in (min(chart) - 1, max(chart) + 1):
                     with self.assertRaises(ValueError):
                         module.get_sat_temp(refrigerant, pressure)
+
+    def test_r22_manufacturer_anchors(self):
+        anchors = {
+            0.6: -40, 24.0: 0, 55.0: 30, 68.6: 40, 84.1: 50,
+            121.4: 70, 143.6: 80, 195.9: 100, 260.0: 120,
+            337.4: 140, 381.7: 150,
+        }
+        for module in (SUPERHEAT, SUBCOOLING):
+            for pressure, expected in anchors.items():
+                self.assertEqual(module.get_sat_temp("R22", pressure), expected)
+
+    def test_r134a_manufacturer_anchors(self):
+        anchors = {
+            0: -14.9, 10: 6.7, 20: 22.2, 28: 32.3, 40: 45.0,
+            50: 54.0, 80: 75.9, 100: 87.7, 150: 111.5,
+            200: 130.4, 250: 146.3, 280: 154.7,
+        }
+        for module in (SUPERHEAT, SUBCOOLING):
+            for pressure, expected in anchors.items():
+                self.assertEqual(module.get_sat_temp("R134A", pressure), expected)
+
+    def test_all_tables_shared_monotone_and_exact(self):
+        self.assertIs(SUPERHEAT.REFRIGERANTS, SUBCOOLING.REFRIGERANTS)
+        self.assertEqual(set(REFRIGERANTS), set(PT_SOURCES))
+        for refrigerant, chart in REFRIGERANTS.items():
+            pressures = sorted(chart)
+            values = [chart[p] for p in pressures]
+            self.assertTrue(all(a < b for a, b in zip(values, values[1:])))
+            for pressure, expected in chart.items():
+                for module in (SUPERHEAT, SUBCOOLING):
+                    self.assertEqual(module.get_sat_temp(refrigerant, pressure), expected)
+            for pressure in (float("nan"), float("inf"), -float("inf")):
+                with self.assertRaises(ValueError):
+                    interpolate_sat_temp(chart, pressure)
+
+    def test_r22_and_r134a_lookup_boundaries(self):
+        for refrigerant, lower, upper in (("R22", 0.6, 381.7), ("R134A", 0, 280)):
+            chart = REFRIGERANTS[refrigerant]
+            self.assertEqual((min(chart), max(chart)), (lower, upper))
+            for pressure in (lower - 0.01, upper + 0.01):
+                with self.assertRaises(ValueError):
+                    interpolate_sat_temp(chart, pressure)
+        self.assertEqual(len(REFRIGERANTS["R22"]), 39)
+        self.assertEqual(len(REFRIGERANTS["R134A"]), 56)
 
 
 class CLITests(unittest.TestCase):
@@ -156,11 +202,51 @@ class CLITests(unittest.TestCase):
             self.assertEqual(result.returncode, 2)
             self.assertNotIn("Traceback", result.stderr)
 
-    def test_legacy_warning(self):
+    def test_all_refrigerants_print_source(self):
+        for refrigerant, (_, url) in PT_SOURCES.items():
+            for script, temperature, pressure in (
+                ("superheat.py", "--suction-temp", "--suction-pressure"),
+                ("subcooling.py", "--liquid-temp", "--head-pressure"),
+            ):
+                result = self.run_cli(script, temperature, "52", pressure, "120",
+                                      "--refrigerant", refrigerant)
+                self.assertEqual(result.returncode, 0, result.stderr)
+                self.assertIn(url, result.stdout)
+                self.assertNotIn("Legacy approximate", result.stdout)
+
+    def test_r22_cli_calculations(self):
         result = self.run_cli("superheat.py", "--suction-temp", "52",
-                              "--suction-pressure", "70", "--refrigerant", "R22")
+                              "--suction-pressure", "68.6", "--refrigerant", "R22")
         self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertIn("Legacy approximate PT data; not revalidated", result.stdout)
+        self.assertIn("SUPERHEAT = 12.0°F", result.stdout)
+        result = self.run_cli("subcooling.py", "--liquid-temp", "90",
+                              "--head-pressure", "195.9", "--refrigerant", "R22")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("SUBCOOLING = 10.0°F", result.stdout)
+
+    def test_r134a_cli_calculations(self):
+        result = self.run_cli("superheat.py", "--suction-temp", "55",
+                              "--suction-pressure", "40", "--refrigerant", "R134A")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("SUPERHEAT = 10.0°F", result.stdout)
+        result = self.run_cli("subcooling.py", "--liquid-temp", "100",
+                              "--head-pressure", "150", "--refrigerant", "R134A")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("SUBCOOLING = 11.5°F", result.stdout)
+
+    def test_all_refrigerants_out_of_range_cli(self):
+        for refrigerant, chart in REFRIGERANTS.items():
+            for value in (min(chart) - 0.01, max(chart) + 0.01):
+                for script, temperature, pressure in (
+                    ("superheat.py", "--suction-temp", "--suction-pressure"),
+                    ("subcooling.py", "--liquid-temp", "--head-pressure"),
+                ):
+                    result = self.run_cli(script, temperature, "52",
+                                          f"{pressure}={value}",
+                                          "--refrigerant", refrigerant)
+                    self.assertEqual(result.returncode, 2)
+                    self.assertIn("outside the supported PT range", result.stderr)
+                    self.assertNotIn("Traceback", result.stderr)
 
 
 if __name__ == "__main__":

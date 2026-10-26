@@ -1,9 +1,14 @@
 # No-Cooling Troubleshooting
 
+Educational discussion prompts, not a live-testing procedure or official record.
+Read [Safety and Authorization Boundaries](../SAFETY.md) first. Use existing
+authorized operating readings; refer required electrical testing to qualified,
+employer-authorized personnel. Keep completed job details in approved private systems.
+
 ### Step 1: Thermostat
 - [ ] Set to COOL, temp below room temp
-- [ ] Display active? If not → check R-C for 24V
-- [ ] Y terminal energized? → check at air handler/condenser
+- [ ] Display/mode and reported thermostat call documented?
+- [ ] Any control-circuit testing referred under the approved procedure?
 
 ### Step 2: Power
 - [ ] Breaker on (indoor + outdoor)?
@@ -13,7 +18,7 @@
 
 ### Step 3: Outdoor Unit
 - [ ] Contactor pulled in (click sound)?
-- [ ] 240V across contacts (should read 0 when closed)?
+- [ ] Contactor condition assessed under the approved procedure, not by sound alone?
 - [ ] Capacitor within tolerance?
 - [ ] Compressor running?
 - [ ] Condenser fan running?
@@ -24,7 +29,7 @@
 - [ ] Suction line temp: ___ °F
 - [ ] Liquid line temp: ___ °F
 - [ ] Superheat: ___ °F (target varies by system type and conditions — check manufacturer chart)
-- [ ] Subcooling: ___ °F (normal: 8-12°F — verify with manufacturer specs)
+- [ ] Subcooling and model-specific target/source documented?
 - [ ] Approach temp (liquid line - outdoor ambient): ___ °F
 
 ### Step 5: Airflow
@@ -32,4 +37,8 @@
 - [ ] Blower wheel clean?
 - [ ] Evaporator coil clean?
 - [ ] Ducts connected, no major leaks?
-- [ ] Supply and return temps (should be 15-20°F delta)?
+- [ ] Supply/return temperatures compared with the equipment method and operating conditions?
+
+Record mode, ambient conditions, refrigerant, units, time, measurement locations,
+and specification source in the official system. Pressure patterns and temperature
+differences alone do not prove a charge fault or authorize refrigerant adjustment.

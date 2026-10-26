@@ -55,10 +55,10 @@ The form has dropdowns and fields — no typing needed for most of it:
 2. **Brand & Model** — type from the nameplate (or skip)
 3. **Refrigerant** — tap dropdown
 4. **Symptom** — tap dropdown
-5. **Field Readings** — fill in what you've measured (suction, head, superheat, subcooling, amps, voltage)
+5. **Field Readings** — sanitized existing authorized readings only; do not collect measurements for the form
 6. **What's Happening** — type a few sentences
-7. **Power State** — confirm de-energized
-8. **Safety Checkboxes** — tap to confirm
+7. **Power State** — describe the example's state; this is not isolation verification
+8. **Reference and Privacy Boundaries** — confirm sanitization and sharing permission, not work authorization
 
 ### Step 4: Submit
 
@@ -132,11 +132,11 @@ Print it, fold it, keep it in your truck.
 
 ## ⚠️ Safety
 
-Always:
-- **De-energize** and verify with a meter before touching equipment
-- **Discharge capacitors** with a 20kΩ resistor
-- **Check manufacturer specs** — this is a reference, not a manual
-- **Follow local code** and OSHA lockout/tagout
+Read [Safety and Authorization Boundaries](SAFETY.md) before using the field aids.
+Use approved energy-control, stored-energy, and verification procedures;
+do not assume a generic resistor, waiting time, PPE class, or coil-cleaning
+method is suitable. This kit is not authorization for live electrical testing.
+Keep required paperwork and actual job records in approved private systems.
 
 [OSHA Lockout/Tagout](https://www.osha.gov/control-hazardous-energy)
 

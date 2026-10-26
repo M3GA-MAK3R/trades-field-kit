@@ -8,12 +8,14 @@ body:
       value: |
         ## Field Tech Issue Report
         
-        Use this template when you're stuck on a service call, found an incorrect
-        reference value in the umbrella guide, or need help diagnosing equipment.
+        Use this template for reference corrections or sanitized educational examples.
+        This is a PUBLIC issue, not a job record or a request for emergency assistance.
+        Do not submit customer contacts, site identifiers, serial numbers, completed
+        paperwork, or job photos. Keep actual records in approved private systems.
         
-        **Safety first:** De-energize and verify before touching any equipment.
-        This repo is for reference only — always consult manufacturer manuals
-        and local code.
+        **Safety first:** Follow applicable employer and equipment-specific procedures.
+        This aid is not authorization for work or live electrical testing. Use existing
+        authorized readings only; do not take measurements to fill this form.
         
   - type: dropdown
     id: equipment-type
@@ -80,7 +82,7 @@ body:
     id: readings
     attributes:
       label: Field Readings
-      description: Enter any measurements you've taken. Delete rows that don't apply.
+      description: Sanitized existing authorized readings only, with mode/conditions and specification source. Do not collect readings for this form.
       value: |
         | Measurement | Value |
         |------------|-------|
@@ -138,7 +140,7 @@ body:
       options:
         - "Yes — de-energized and locked out"
         - "Yes — de-energized, not locked out"
-        - "No — still energized (STOP: de-energize before proceeding)"
+        - "Operating observations only — no work authorized by this form"
         - "N/A — question about reference content"
     validations:
       required: true
@@ -146,22 +148,22 @@ body:
   - type: checkboxes
     id: safety
     attributes:
-      label: Safety Confirmation
-      description: Confirm the following before submitting
+      label: Reference and Privacy Boundaries
+      description: These acknowledgments do not establish that equipment is safe or authorize work
       options:
-        - label: I have de-energized the equipment or am only asking a reference question
+        - label: This is sanitized reference feedback, not an actual job record
           required: true
-        - label: I have verified de-energized with a meter (if working on equipment)
-          required: false
+        - label: I have removed private information and have permission to share the example
+          required: true
         - label: I understand this is a community reference, not a substitute for manufacturer manuals or code
           required: true
 
   - type: textarea
     id: photos
     attributes:
-      label: Photos / Nameplate
-      description: Attach photos of the nameplate, wiring, or relevant components if possible. Drag and drop or paste image links.
-      placeholder: "Drag and drop images here, or paste links to screenshots of gauge readings, nameplate, etc."
+      label: Sanitized Reference Illustrations (optional)
+      description: Approved generic diagrams or sanitized examples only. No actual job photos, nameplates, serial numbers, or private document links.
+      placeholder: "Optional non-sensitive reference illustration; verify permission and remove identifying details."
     validations:
       required: false
 

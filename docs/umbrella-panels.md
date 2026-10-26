@@ -2,31 +2,35 @@
 
 Each "flap" of the umbrella is a self-contained reference panel. Print, fold, and keep in your truck or tool bag. When you're stuck on a service call, glance at the relevant flap.
 
+Educational discussion aid, not official paperwork or authorization to work.
+Read [Safety and Authorization Boundaries](SAFETY.md) first. Existing operating
+readings can be discussed; this reference does not supply live-probing instructions.
+Keep actual job records and photos in approved private systems.
+
 ---
 
 ## Flap 1: Safety First
 
 ### Lockout/Tagout (LOTO)
-1. **Notify** — inform anyone affected
-2. **Shut down** — turn equipment off by normal means
-3. **Isolate** — disconnect/break the energy source
-4. **Lock out** — apply individual lock + tag to the disconnect
-5. **Verify de-energized** — test with a meter (test meter on known source first)
-6. **Release** — remove locks/tags only by the person who applied them
+Use the employer's applicable program and equipment-specific procedure, not this
+panel as a sequence. Discuss all sources, stored energy, reaccumulation,
+authorized roles, isolation verification, group/shift continuity, and stop-work
+conditions. A disconnect position or meter reading alone does not verify all
+hazards. Use the applicable return-to-service and device-removal procedure; this
+aid does not authorize removal of another person's lock.
 
 ### Wet-Work Precautions (Pressure Washing Near Equipment)
 - Never pressure wash energized electrical components
-- Cover condenser fan motors, contactors, and control boards
+- Follow equipment instructions for protection of motors, controls, and compartments
 - Keep water stream away from electrical disconnects and panels
 - Allow equipment to dry completely before re-energizing
-- Use GFCI-protected power sources for all tools
+- Use electrical tools approved for the location, with required protection
+- Covers, GFCIs, and drying do not replace isolation or authorization
 
 ### PPE Checklist
-- Safety glasses or face shield
-- Electrical-rated gloves (Class 0 for up to 1000V)
-- Hearing protection
-- Closed-toe boots (EH-rated)
-- Long pants and sleeves for brazing
+Select eye/face, shock/arc, chemical, hearing, foot, and other protection from the
+task-specific assessment. No glove class or generic clothing list establishes a
+complete protective system. See [OSHA 1910.335](https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.335).
 
 ---
 
@@ -72,33 +76,34 @@ Each "flap" of the umbrella is a self-contained reference panel. Print, fold, an
 ### Superheat (Evaporator Performance)
 **Formula:** Superheat = Suction Line Temp − Saturated Suction Temp (from PT chart)
 
-| Superheat | Likely Cause |
-|-----------|-------------|
-| Too high (>15-20°F) | Undercharged, restricted metering device, low airflow |
-| Too low (<5-10°F) | Overcharged, metering device overfeeding, high airflow |
-| Normal (varies by system) | Target varies by indoor/outdoor conditions and manufacturer chart — fixed orifice targets differ from TXV. Always check manufacturer specs. |
+Use the equipment manufacturer's target for its metering device and measured
+conditions. Fixed-orifice and regulated-valve systems need their applicable
+methods; there is no universal target or one-reading charge diagnosis.
 
 ### Subcooling (Condenser Performance)
 **Formula:** Subcooling = Saturated Liquid Temp − Liquid Line Temp
 
-| Subcooling | Likely Cause |
-|------------|-------------|
-| Too high (>15-20°F) | Overcharged, restricted liquid line |
-| Too low (<5-10°F) | Undercharged, condenser airflow issue |
-| Normal (8-12°F) | System operating correctly |
+Compare with the model-specific target and charging method. A number by itself
+does not prove correct operation or authorize an adjustment.
 
 ### Quick Check Steps
-1. Measure suction/liquid line temperature at the unit
-2. Read suction/head pressure gauges
-3. Convert pressures to saturated temps using PT chart for your refrigerant
-4. Calculate superheat/subcooling
-5. Compare to manufacturer specs
+1. Identify refrigerant, operating mode, metering device, and specification source.
+2. Use existing authorized, stable readings with paired pressure/temperature locations.
+3. Select the correct refrigerant PT chart and pressure units; use dew/bubble
+   values as applicable to the identified blend and calculation.
+4. Calculate and compare with the applicable manufacturer method, considering airflow
+   and other conditions; do not adjust charge from pressure patterns alone.
+
+See [calculator data and limits](../calculators/README.md).
 
 ---
 
 ## Flap 4: Thermostat Low-Voltage Wiring
 
 ### Standard Terminal Colors
+Colors are conventions, not wiring instructions. Verify terminal functions,
+voltages, safety circuits, and O/B logic on the exact equipment schematic.
+
 | Terminal | Wire Color | Function |
 |----------|-----------|----------|
 | R / RH / RC | Red | 24V power (heat / cool) |
@@ -129,7 +134,9 @@ Many techs wire the float switch to break R (kills thermostat + defrost board) o
 - Coil: 24V from thermostat Y terminal → through safety switches → contactor coil
 - Contacts: Line voltage (240V) through contacts to compressor and condenser fan
 - **Common failures:** pitted/burned contacts, coil burnout, ants/debris in contactor
-- **Test:** Listen for click, measure voltage across coil (24V), check continuity across contacts (closed when energized)
+- **Assessment:** Use the model schematic and approved isolated-work inspection
+  method. A click does not prove safe isolation or healthy contacts; refer required
+  energized testing to qualified, authorized personnel.
 
 ### Capacitor
 | Terminal | Connects To |
@@ -138,19 +145,21 @@ Many techs wire the float switch to break R (kills thermostat + defrost board) o
 | FAN | Condenser fan motor |
 | HERM | Compressor |
 
-**WARNING:** Capacitors hold a charge. Always discharge through a resistor before handling.
+**WARNING:** Capacitors and drives can retain hazardous energy after disconnection.
+Use the manufacturer's discharge, wait, and verification procedure with approved
+rated tools. No universal resistor value or waiting period is specified here.
 
 ### Capacitor Testing
-1. **Visual:** Bulging or leaking = replace immediately
-2. **Discharge:** Use a 20kΩ resistor across terminals
-3. **Measure:** With capacitance meter, compare to rated MFD (±10% acceptable)
-4. **Start cap:** Check for open circuit if hard-starting
+Only qualified, authorized personnel following the applicable isolation and
+stored-energy procedure may inspect/test. Compare capacitance with the component's
+marked tolerance and manufacturer instructions, not a generic percentage.
+Do not improvise terminal shorting. See [capacitor safety](SAFETY.md#capacitors-drives-and-ppe).
 
 ### Common Motor Symptoms
 | Symptom | Check |
 |---------|-------|
 | Motor hums, won't start | Capacitor, bearings, start winding |
-- | Contactor not pulling in |
+| Contactor not pulling in | Approved control-circuit diagnosis by qualified personnel |
 | Motor overheats | Bearings, voltage, airflow, capacitor too high |
 | Compressor short-cycles | Low/high pressure switch, overload, charge level |
 
@@ -240,11 +249,10 @@ Thermostat set to COOL and below room temp?
 ├─ No → Check thermostat, batteries, display
 └─ Yes → Is outdoor unit running?
    ├─ No → Check breaker/disconnect → contactor → capacitor → compressor
-   └─ Yes → Check suction/head pressure
-      ├─ Low suction, low head → Low charge / leak
-      ├─ High suction, high head → Restricted airflow / overcharge
-      ├─ Low suction, high head → Restriction (filter drier, metering device)
-      └─ High suction, low head → Bad compressor valves
+   └─ Yes → Compare authorized readings, airflow, mode, and load
+      ├─ Confirm refrigerant, paired measurements, and stable conditions
+      ├─ Compare with the equipment manufacturer's diagnostic method
+      └─ Pressure patterns alone do not identify a fault or justify charging
 ```
 
 ### No Heat (Heat Pump)
@@ -261,12 +269,9 @@ Thermostat set to HEAT and above room temp?
 ### Short Cycling
 - Check: thermostat location (drafts), filter cleanliness, coil freeze-up, low charge, oversized equipment, pressure switch tripping
 
-### Pressure Washing Maintenance Checklist
-- [ ] Cover all electrical components
-- [ ] Use low pressure with wide-fan nozzle; prefer garden-hose pressure when possible
-- [ ] Spray top-down on condenser, bottom-up is OK for evaporator
-- [ ] Use manufacturer-approved coil cleaner; follow label instructions
-- [ ] Rinse thoroughly
-- [ ] Allow to dry before re-energizing
-- [ ] Check coil fins — straighten with fin comb if bent
-- [ ] Verify drain is clear after cleaning
+### Coil Cleaning Discussion
+Read the exact coil instructions before choosing chemicals, pressure, distance,
+spray direction, or fin tools. Do not assume a pressure washer is permitted;
+some microchannel instructions prohibit both pressure washers and chemicals.
+Use the [wet-work discussion checklist](field-checklists/pressure-washing.md)
+and approved return-to-service process, not a generic spray recipe.

@@ -1,5 +1,10 @@
 # No-Heat Troubleshooting (Heat Pump)
 
+Educational discussion prompts, not a live-testing procedure or official record.
+Read [Safety and Authorization Boundaries](../SAFETY.md) first. Use existing
+authorized operating observations; required electrical testing belongs to qualified,
+employer-authorized personnel. Keep job details in approved private systems.
+
 ### Step 1: Thermostat
 - [ ] Set to HEAT, temp above room temp
 - [ ] W and/or Y energized?
@@ -7,7 +12,7 @@
 
 ### Step 2: Outdoor Unit
 - [ ] Compressor running?
-- [ ] Reversing valve in heat position? (de-energized = heat for most brands)
+- [ ] Reversing-valve logic confirmed from the exact schematic and operating mode?
 - [ ] Outdoor fan running? (stops during defrost — normal)
 - [ ] Frost on outdoor coil? → Check defrost cycle
 
@@ -26,4 +31,5 @@
 ### Step 5: Refrigerant (Heating Mode)
 - [ ] Suction pressure (heating): ___ PSI
 - [ ] Head pressure (heating): ___ PSI
-- [ ] Check for low charge symptoms in heating mode
+- [ ] Compare existing authorized readings with the model's heating-mode method,
+  operating conditions, and measurement locations; do not infer charge from pressures alone

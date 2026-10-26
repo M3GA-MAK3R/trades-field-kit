@@ -24,7 +24,7 @@ Publish blank templates and sanitized examples only. Keep completed job records,
 customer contacts, facility details, and job photos in employer-approved private
 systems, not in public commits, issues, or pull requests.
 
-Verify technical values against manufacturer documentation and applicable codes.
+Read the [safety boundaries](docs/SAFETY.md); verify values against manufacturer documentation and applicable codes.
 Follow approved energy-control procedures; this kit does not authorize energized
 work or refrigerant adjustments. See [sources and data limitations](references/sources.md).
 

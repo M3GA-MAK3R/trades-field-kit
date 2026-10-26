@@ -12,6 +12,11 @@ set -euo pipefail
 
 REPO="M3GA-MAK3R/trades-field-kit"
 
+echo "PUBLIC reference feedback only: sanitized, approved examples."
+echo "No actual job records, customer contacts, site identifiers, serial numbers,"
+echo "job photos, or private links. Use existing authorized readings only."
+echo "This tool does not authorize work or live electrical testing."
+
 # --web flag: skip prompts, open browser to template chooser
 if [[ "${1:-}" == "--web" ]]; then
   echo "Opening browser to issue template chooser..."
@@ -213,7 +218,8 @@ ${location}
 ---
 *Filed via trades-field-kit CLI script. Verify all values against manufacturer specs, NEC, and local code.*
 
-**Safety:** Always de-energize and verify with a meter before touching equipment.
+**Safety:** Follow applicable employer and equipment-specific procedures.
+This reference does not authorize work or live electrical testing.
 "
 
 # Write body to temp file
@@ -230,7 +236,7 @@ cat "$body_file"
 echo "========================================"
 echo ""
 
-read -p "Submit this issue? (y/n): " confirm
+read -p "Confirm sanitized, approved PUBLIC feedback and submit? (y/n): " confirm
 if [[ "$confirm" != "y" && "$confirm" != "Y" ]]; then
   echo "Cancelled. Issue body saved to: $body_file"
   exit 0

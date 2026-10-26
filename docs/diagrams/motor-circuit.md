@@ -1,9 +1,13 @@
 # Contactor & Capacitor Motor Circuit Diagram (Mermaid)
 
+Conceptual example only, not a wiring or live-testing procedure. Actual voltages,
+capacitor connections, and safety-circuit arrangements vary; use the exact
+manufacturer schematic. Read [Safety and Authorization Boundaries](../SAFETY.md).
+
 ```mermaid
 graph TD
-    L1[L1: 240V] --> CONTACTOR[Contactor Contacts]
-    L2[L2: 240V] --> CONTACTOR
+    L1[L1: Supply leg] --> CONTACTOR[Contactor Contacts]
+    L2[L2: Supply leg] --> CONTACTOR
     CONTACTOR -->|When energized| COMP[Compressor]
     CONTACTOR -->|When energized| CFAN[Condenser Fan Motor]
     
@@ -33,25 +37,21 @@ graph TD
 ## Safety
 
 **Capacitors store energy even when power is off.**
-1. Discharge with a 20kΩ resistor across terminals
-2. Wait 30 seconds, short terminals again
-3. Verify with meter before handling
-4. Never short with a screwdriver (can damage cap or cause arc)
+Use the equipment manufacturer's stored-energy, discharge, waiting, and verification
+procedure with approved rated tools and qualified personnel. This diagram provides
+no universal resistor value, wait time, or instruction to improvise terminal shorting.
 
 ## Contactor Testing
 
-| Test | Method | Expected |
-|------|--------|----------|
-| Coil voltage | Meter across coil terminals | 24V when thermostat calls |
-| Coil continuity | Meter ohms across coil | 10-30Ω (varies by model) |
-| Contacts (energized) | Meter across closed contacts | ~0V (no voltage drop) |
-| Contacts (de-energized) | Meter across open contacts | 240V (full voltage) |
-| Visual | Inspect contact faces | No pitting, burning, or debris |
+An open/de-energized contactor coil does not mean its line terminals are isolated.
+Do not use contact position or a click as proof of safety. Use the applicable
+isolated-work inspection method; refer required energized electrical testing
+to qualified, authorized personnel under their approved procedure.
 
 ## Capacitor Testing
 
 | Test | Method | Expected |
 |------|--------|----------|
-| Capacitance | Capacitance meter across terminals | Within ±10% of rated MFD |
+| Capacitance | Approved isolated/stored-energy-safe method | Component marking and manufacturer tolerance |
 | Visual | Inspect top and body | No bulging, leaking, or case damage |
-| Short to ground | Ohm meter, terminal to case | Infinite (OL) |
+| Insulation condition | Manufacturer-specified test by qualified personnel | A continuity reading alone does not certify insulation or safety |

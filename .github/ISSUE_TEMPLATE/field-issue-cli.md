@@ -5,6 +5,11 @@ title: "[FIELD] "
 labels: ["field-issue", "triage"]
 ---
 
+PUBLIC reference feedback only: blank templates or sanitized, approved examples.
+Do not include actual job records, customer contacts, facility identifiers,
+serial numbers, job photos, or private links. Use existing authorized readings;
+do not collect measurements for this template.
+
 ## Equipment
 - **Type:** (Central AC / Heat Pump / Furnace / Mini-Split / Package Unit / Other)
 - **Brand & Model:**
@@ -42,5 +47,6 @@ labels: ["field-issue", "triage"]
 (City/state or region)
 
 ---
-**Safety:** Always de-energize and verify with a meter before touching equipment.
+**Safety:** Follow applicable employer and equipment-specific procedures. This
+reference does not authorize work or live electrical testing.
 This is a community reference — verify all values against manufacturer specs, NEC, and local code.

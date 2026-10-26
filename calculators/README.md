@@ -36,9 +36,14 @@ These are CLI tools, not interactive phone-browser calculators.
 - **Invalid inputs:** Pressures outside the selected table's range and non-finite
   temperatures or pressures produce an error and nonzero exit status.
   Values are not silently snapped to an endpoint or extrapolated.
-- **R22 and R134A:** Legacy approximate tables remain for compatibility.
-  Their underlying values were not revalidated in the R410A correction.
-  The CLI warns accordingly; use a current manufacturer chart for field decisions.
+- **R22:** Shared data from the R22 column of
+  [Honeywell's AZ-20 / R-22 chart](https://prod-edam.honeywell.com/content/dam/honeywell-edam/pmt/oneam/en-us/refrigerants/documents/pmt-am-genetron-aZ20-genetronr22-pressure-temp-chart-tech-tool1.pdf)
+  (2011), at 5°F intervals, inverted to pressure keys.
+  Supported range: 0.6–381.7 PSIG (-40–150°F); vacuum values are not supported.
+- **R134A:** Shared pressure-based data from Appendix E, Genetron 134a, of
+  [Honeywell's N13 / 134a retrofit guide](https://prod-edam.honeywell.com/content/dam/honeywell-edam/pmt/oneam/en-us/refrigerants/documents/pmt-am-solstice-n13-commercial-refrigeration-retrofit-tech-guide1.pdf)
+  (December 2017). Supported range: 0–280 PSIG (-14.9–154.7°F).
+  These are R134a entries, not the guide's N13 blend data.
 - **Interpretation:** Compare results with the equipment manufacturer's target
   for the metering device, mode, measurement location, and operating conditions.
   A calculated value alone does not establish normal operation, diagnose charge,
@@ -48,7 +53,9 @@ These are CLI tools, not interactive phone-browser calculators.
 
 The existing `--head-pressure` flag is retained for compatibility. For subcooling,
 use pressure at the liquid-line temperature measurement point, not an unrelated
-discharge reading. See [sources and limitations](../references/sources.md).
+discharge reading. The same paired-location requirement applies to superheat.
+See [sources and limitations](../references/sources.md) and
+[safety/authorization boundaries](../docs/SAFETY.md).
 
 ## Regression Tests
 
@@ -56,7 +63,9 @@ discharge reading. See [sources and limitations](../references/sources.md).
 python3 -m unittest discover -s tests -v
 ```
 
-Tests cover manufacturer R410A anchor values, shared-table consistency,
+Tests cover manufacturer R410A/R22/R134A anchor values, shared-table consistency,
 interpolation, range boundaries, invalid inputs, CLI results, and failure exit
 codes. They do not certify other calculators or replace equipment-specific
-validation. GitHub Actions runs the suite on Python 3.10–3.14.
+validation. Content checks guard selected safety boundaries and skill-copy parity,
+not the complete technical accuracy of the reference library.
+GitHub Actions runs the suite on Python 3.10–3.14.

@@ -1,181 +1,50 @@
-# Field Checklists
+# Planned Maintenance Discussion Checklist
 
-## Planned Maintenance (PM) Checklist
+Educational planning prompts, not an equipment procedure, sign-off, or official
+record. Read [Safety and Authorization Boundaries](../SAFETY.md) and use the
+[toolbox-talk aid](../../templates/field-preflight.md) before work.
+Keep actual job records and permitted photos in approved private systems.
 
-### Spring / Cooling Pre-Season
-- [ ] Outdoor unit: clear debris, trim vegetation (2 ft clearance)
-- [ ] Inspect and clean condenser coil (top-down spray, ≤1500 PSI)
-- [ ] Check condenser fan blade condition and motor amps
-- [ ] Inspect contactor for pitting/burning — replace if needed
-- [ ] Test capacitor MFD (±10% tolerance)
-- [ ] Check compressor amps (compare to nameplate LRA/RLA)
-- [ ] Inspect refrigerant lines for oil stains (leak indicator)
-- [ ] Check superheat/subcooling against manufacturer specs
-- [ ] Clear condensate drain line (wet vac or nitrogen)
-- [ ] Replace air filter
-- [ ] Check thermostat operation (heat/cool/fan)
-- [ ] Inspect ductwork for visible leaks/disconnection
-- [ ] Verify safety controls: float switch, high/low pressure switches
+## Cooling Season
 
-### Fall / Heating Pre-Season
-- [ ] Inspect heat strips (if electric heat)
-- [ ] Check sequencer operation
-- [ ] Test heat pump defrost cycle
-- [ ] Inspect reversing valve operation
-- [ ] Check auxiliary heat engagement
-- [ ] Verify emergency heat mode
-- [ ] Clean outdoor coil (critical for winter efficiency)
-- [ ] Check refrigerant charge in heating mode
-- [ ] Inspect gas valve/furnace components (if applicable)
-- [ ] Clear condensate drain
+- [ ] Model-specific maintenance schedule, scope, and access clearances reviewed?
+- [ ] Debris, airflow paths, filters, blower, ducts, and coil condition considered?
+- [ ] Coil cleaning method confirmed against the exact coil instructions?
+  No generic pressure, distance, chemical, or fin-tool rule assumed?
+- [ ] Contactor, motor, and capacitor inspection assigned to qualified personnel
+  under the applicable isolated-work and stored-energy procedures?
+- [ ] Capacitance compared with the component marking/manufacturer tolerance,
+  not a universal percentage?
+- [ ] Authorized operating readings compared with applicable manufacturer targets?
+  Running current and nameplate values distinguished; locked-rotor current is
+  not a normal running target?
+- [ ] Refrigerant/charge questions evaluated with airflow, mode, load, measurement
+  location, and equipment instructions, not a single pressure pattern?
+- [ ] Drain and pan maintenance method approved for the equipment and site?
+- [ ] Controls and safeties considered without bypassing them?
 
-### Year-Round Each Visit
-- [ ] Document readings: suction PSI, head PSI, subcooling, superheat, amps
-- [ ] Photo equipment nameplate and readings
-- [ ] Note any unusual sounds/vibrations
-- [ ] Customer communication: findings, recommendations, next steps
+## Heating Season
 
----
+- [ ] Applicable heat-pump, electric-heat, or combustion-equipment maintenance plan identified?
+- [ ] Reversing valve, defrost, auxiliary heat, and control logic checked against
+  the model's sequence, not a generic brand assumption?
+- [ ] Electrical/combustion tests restricted to qualified, authorized personnel
+  using applicable procedures and suitable instruments?
+- [ ] Filters, coils, airflow paths, drainage, and reported operating symptoms reviewed?
 
-## Pressure Washing Safety & Procedure
+## Each Visit and Handoff
 
-### Before You Start
-- [ ] De-energize equipment at disconnect
-- [ ] Apply lockout/tagout
-- [ ] Cover control boards, contactors, fan motors with plastic
-- [ ] Verify GFCI on power washer electrical supply
-- [ ] Wear: safety glasses, rain gear, slip-resistant boots
+- [ ] Official record identifies mode, conditions, units, locations, specification
+  source, relevant readings, findings, and equipment disposition?
+- [ ] Work restrictions, unresolved concerns, and next owner communicated?
+- [ ] Permitted photos stored privately; public examples sanitized and approved?
+- [ ] Scope or hazard changes trigger reassessment rather than automatic completion?
 
-### Condenser Coil Cleaning
-1. Apply manufacturer-approved coil cleaner; follow label instructions
-2. Let dwell per cleaner directions (do not let dry)
-3. Use low pressure with wide-fan nozzle at 45° angle
-4. Keep nozzle 6-8 inches from fins
-5. Rinse until water runs clear
-6. Inspect fins — straighten with fin comb
-7. Remove covers, verify dry before re-energizing
+## Task-Specific Aids
 
-### Evaporator Coil Cleaning
-1. Access indoor coil (remove panel, use drop cloth)
-2. Apply coil cleaner per manufacturer label instructions
-3. Let dwell per manufacturer instructions
-4. Spray bottom-up at low pressure if accessible
-5. Rinse if cleaner requires it
-6. Clean drain pan, clear drain line
-7. Verify drain is flowing before replacing panel
+Use the linked aids instead of maintaining duplicate procedures here:
 
-### After
-- [ ] Remove all covers/plastic
-- [ ] Verify no water in electrical compartments
-- [ ] Allow adequate drying time
-- [ ] Remove lockout/tagout
-- [ ] Test equipment operation
-- [ ] Take before/after photos for customer
-
----
-
-## No-Cooling Troubleshooting
-
-### Step 1: Thermostat
-- [ ] Set to COOL, temp below room temp
-- [ ] Display active? If not → check R-C for 24V
-- [ ] Y terminal energized? → check at air handler/condenser
-
-### Step 2: Power
-- [ ] Breaker on (indoor + outdoor)?
-- [ ] Disconnect pulled in (outdoor)?
-- [ ] 24V transformer output?
-- [ ] Fuse on control board intact?
-
-### Step 3: Outdoor Unit
-- [ ] Contactor pulled in (click sound)?
-- [ ] 240V across contacts (should read 0 when closed)?
-- [ ] Capacitor within tolerance?
-- [ ] Compressor running?
-- [ ] Condenser fan running?
-
-### Step 4: Refrigerant
-- [ ] Suction pressure: ___ PSI
-- [ ] Head pressure: ___ PSI
-- [ ] Suction line temp: ___ °F
-- [ ] Liquid line temp: ___ °F
-- [ ] Superheat: ___ °F (normal: 8-14°F)
-- [ ] Subcooling: ___ °F (normal: 8-12°F)
-- [ ] Approach temp (liquid line - outdoor ambient): ___ °F
-
-### Step 5: Airflow
-- [ ] Filter clean?
-- [ ] Blower wheel clean?
-- [ ] Evaporator coil clean?
-- [ ] Ducts connected, no major leaks?
-- [ ] Supply and return temps (should be 15-20°F delta)?
-
----
-
-## No-Heat Troubleshooting (Heat Pump)
-
-### Step 1: Thermostat
-- [ ] Set to HEAT, temp above room temp
-- [ ] W and/or Y energized?
-- [ ] Aux heat (W2) engaging?
-
-### Step 2: Outdoor Unit
-- [ ] Compressor running?
-- [ ] Reversing valve in heat position? (de-energized = heat for most brands)
-- [ ] Outdoor fan running? (stops during defrost — normal)
-- [ ] Frost on outdoor coil? → Check defrost cycle
-
-### Step 3: Defrost System
-- [ ] Defrost thermostat/sensor reading correctly?
-- [ ] Defrost board timer advancing?
-- [ ] Reversing valve switches during defrost?
-- [ ] Heat strips (W2) energize during defrost?
-
-### Step 4: Electric Heat (if applicable)
-- [ ] Sequencer energizing heat strips?
-- [ ] All strips pulling amps?
-- [ ] High-limit switch tripping?
-- [ ] Thermal overload resetting?
-
-### Step 5: Refrigerant (Heating Mode)
-- [ ] Suction pressure (heating): ___ PSI
-- [ ] Head pressure (heating): ___ PSI
-- [ ] Check for low charge symptoms in heating mode
-
----
-
-## Electrical Safety Checklist
-
-### Before Any Electrical Work
-- [ ] Identify all energy sources (primary + secondary)
-- [ ] Notify affected personnel
-- [ ] Turn off at disconnect/breaker
-- [ ] Apply individual lock and tag
-- [ ] Verify de-energized with meter
-- [ ] Test meter on known-live source first (meter check)
-- [ ] Re-test the circuit — confirm 0V
-
-### Lockout/Tagout Steps
-1. Prepare for shutdown
-2. Notify affected employees
-3. Shut down equipment (normal stop)
-4. Isolate energy source (open disconnect)
-5. Apply lockout device (padlock, hasp, or chain)
-6. Apply tag with: name, date, reason, expected duration
-7. Verify isolation (test for zero energy)
-8. Perform work
-
-### After Work
-- [ ] Remove tools, materials, personnel from area
-- [ ] Replace guards, covers, panels
-- [ ] Remove lockout devices and tags
-- [ ] Notify affected employees
-- [ ] Restore energy
-- [ ] Verify equipment operates normally
-
-### Meter Safety
-- Always test meter on a known source before AND after measuring
-- Use the correct meter category rating (CAT III for HVAC)
-- Inspect leads for damage before use
-- Never use a meter in damp conditions without rated PPE
-- Be aware of arc-flash potential near energized panels
+- [Coil cleaning and wet-work discussion](pressure-washing.md)
+- [No-cooling discussion](no-cool.md)
+- [No-heat discussion](no-heat.md)
+- [Electrical safety discussion](electrical-safety.md)

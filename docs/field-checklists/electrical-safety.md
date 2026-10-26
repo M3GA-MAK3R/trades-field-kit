@@ -1,35 +1,36 @@
-# Electrical Safety Checklist
+# Electrical Safety Discussion Checklist
 
-## Before Any Electrical Work
-- [ ] Identify all energy sources (primary + secondary)
-- [ ] Notify affected personnel
-- [ ] Turn off at disconnect/breaker
-- [ ] Apply individual lock and tag
-- [ ] Verify de-energized with meter
-- [ ] Test meter on known-live source first (meter check)
-- [ ] Re-test the circuit — confirm 0V
+Educational prompts, not a LOTO procedure, permit, sign-off, or substitute for
+discipline and official paperwork. Read [Safety and Authorization Boundaries](../SAFETY.md)
+before using this aid. Keep completed job records in approved private systems.
 
-## Lockout/Tagout Steps
-1. Prepare for shutdown
-2. Notify affected employees
-3. Shut down equipment (normal stop)
-4. Isolate energy source (open disconnect)
-5. Apply lockout device (padlock, hasp, or chain)
-6. Apply tag with: name, date, reason, expected duration
-7. Verify isolation (test for zero energy)
-8. Perform work
+## Before Work
 
-## After Work
-- [ ] Remove tools, materials, personnel from area
-- [ ] Replace guards, covers, panels
-- [ ] Remove lockout devices and tags
-- [ ] Notify affected employees
-- [ ] Restore energy
-- [ ] Verify equipment operates normally
+- [ ] Applicable employer program, equipment-specific procedure, and authorization identified?
+- [ ] Authorized/qualified roles, affected people, and communication agreed?
+- [ ] All energy sources, backfeeds, stored energy, and reaccumulation considered?
+- [ ] Safe isolation and verification established by the responsible person under
+  the applicable procedure, not assumed from the disconnect or a displayed zero?
+- [ ] Test instruments and leads inspected and suitable for the circuit and environment?
+- [ ] Task-specific PPE, access controls, tools, and stop-work triggers confirmed?
 
-## Meter Safety
-- Always test meter on a known source before AND after measuring
-- Use the correct meter category rating (CAT III for HVAC)
-- Inspect leads for damage before use
-- Never use a meter in damp conditions without rated PPE
-- Be aware of arc-flash potential near energized panels
+## During Work and Changes
+
+- [ ] Task stays within the approved isolated-work scope?
+- [ ] Any operating-system measurements referred to qualified, authorized personnel,
+  rather than treated as permission for live probing?
+- [ ] Changes in scope, hazards, crew, or shift addressed under the applicable procedure?
+- [ ] Stored-energy controls and any required ongoing verification maintained?
+
+## Closeout and Handoff
+
+- [ ] Equipment disposition agreed: return to service, left isolated, awaiting parts, or handoff?
+- [ ] Applicable inspections, guards, tool accounting, and personnel-clearance checks complete?
+- [ ] Device removal and notifications handled only under the applicable procedure,
+  not by an instruction to remove another person's lock?
+- [ ] Restrictions, remaining work, and next owner recorded in the official system?
+
+References: [OSHA 1910.147](https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.147),
+[1910.333](https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.333),
+[1910.334](https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.334),
+and [1910.335](https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.335).
