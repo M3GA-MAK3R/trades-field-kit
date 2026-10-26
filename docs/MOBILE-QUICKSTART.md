@@ -8,6 +8,9 @@
 
 | What you need | Tap this |
 |--------------|----------|
+| Find the right file quickly | [Repository navigation](NAVIGATION.md) |
+| Shadow a mechanic or plan helper learning | [Mechanic shadow/helper checklist](field-checklists/mechanic-shadow-helper.md) |
+| Prepare a first-year review or portfolio story | [First-year review worksheet](../templates/first-year-review.md) |
 | Prepare a crew discussion | [Field Pre-Flight & Toolbox Talk Aid](../templates/field-preflight.md) |
 | Arrived early or site contact not answering | [Arrival, Contact, and Waiting](../templates/field-preflight.md#arrival-contact-and-waiting) |
 | File a field issue | [New Issue](https://github.com/M3GA-MAK3R/trades-field-kit/issues/new?template=field-issue.yml) |

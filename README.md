@@ -6,6 +6,8 @@ and learning, not to replace professional judgment or required procedures.
 
 ## Start Here
 
+- **Find a file:** [Quick navigation guide](docs/NAVIGATION.md)
+- **Learning and review:** [Mechanic shadow/helper aid](docs/field-checklists/mechanic-shadow-helper.md) and [first-year review worksheet](templates/first-year-review.md)
 - **Crew discussion:** [Field Pre-Flight & Toolbox Talk Aid](templates/field-preflight.md)
 - **Phone access:** [Mobile Quick Start](docs/MOBILE-QUICKSTART.md)
 - **Field reference:** [Umbrella Panels](docs/umbrella-panels.md) and [printable PDF](Handy_Helper_Umbrella_Field_Reference.pdf)

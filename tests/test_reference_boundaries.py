@@ -114,6 +114,49 @@ class ReferenceBoundaryTests(unittest.TestCase):
             "../templates/field-preflight.md#arrival-contact-and-waiting", mobile
         )
 
+    def test_learning_aids_are_discoverable(self):
+        readme = (ROOT / "README.md").read_text()
+        mobile = (ROOT / "docs/MOBILE-QUICKSTART.md").read_text()
+        navigation = (ROOT / "docs/NAVIGATION.md").read_text()
+        for filename in (
+            "NAVIGATION.md", "mechanic-shadow-helper.md", "first-year-review.md"
+        ):
+            self.assertIn(filename, readme)
+            self.assertIn(filename, mobile)
+        for filename in (
+            "SAFETY.md", "field-preflight.md", "mechanic-shadow-helper.md",
+            "first-year-review.md", "calculators/README.md", "sources.md",
+        ):
+            self.assertIn(filename, navigation)
+        self.assertLessEqual(len(navigation.splitlines()), 55)
+
+    def test_helper_aid_distinguishes_learning_from_authorization(self):
+        content = (ROOT / "docs/field-checklists/mechanic-shadow-helper.md").read_text()
+        for required in (
+            "assigned mechanic", "work ethic", "private systems", "../SAFETY.md",
+            "what you must not touch", "Read back", "supervision",
+            "pause", "Do not conceal an error", "existing authorized readings",
+            "observed", "practiced under supervision",
+            "demonstrated to an", "not certifications", "first-year-review.md",
+        ):
+            with self.subTest(required=required):
+                self.assertIn(required, content)
+
+    def test_review_worksheet_has_honest_evidence_and_portfolio_boundaries(self):
+        content = (ROOT / "templates/first-year-review.md").read_text()
+        for required in (
+            "not an employer evaluation", "private systems", "not yet exposed",
+            "observed", "practiced under supervision",
+            "demonstrated to an assigned reviewer", "needs refresher",
+            "not measured", "permission", "not imply employer endorsement",
+            "AI-assisted", "prior technical training", "licenses",
+            "not a credential claimed", "Next 30 days", "Next 60 days",
+            "Next 90 days", "No production BAS connection",
+            "not demonstrated trade competence",
+        ):
+            with self.subTest(required=required):
+                self.assertIn(required, content)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -26,7 +26,8 @@ All contributions must:
 - Include a safety warning where relevant (de-energize, capacitor discharge, etc.)
 - Cite sources for technical values (manufacturer manuals, NEC, OSHA, ASHRAE)
 - Use "verify against manufacturer specs / local code" language for code-sensitive items
-- Never instruct energized-work procedures without proper PPE/permit warnings
+- Do not provide live electrical testing instructions; warnings or PPE do not
+  substitute for qualification, authorization, or approved procedures
 
 ## Calculator Guidelines
 
@@ -44,7 +45,8 @@ All contributions must:
 ## Checklist Guidelines
 
 - Markdown format
-- Checkbox items with `- [ ]` syntax
+- Use `- [ ]` for task/learning prompts, not as proof of competence, compliance,
+  or authorization; discussion aids can use questions instead
 - Group by step (thermostat → power → outdoor unit → refrigerant → airflow)
 - Include a readings table template where relevant
 
