@@ -1,145 +1,36 @@
 # Trades Field Kit
 
-A practical toolkit for HVAC, electrical, and skilled-trades field work. Born from the **Handy Helper Umbrella** concept — a field reference you can glance at when you're stuck troubleshooting, and that (theoretically) could be printed on umbrella panels to keep you dry during pressure-washing maintenance.
+Practical HVAC, electrical, and skilled-trades references for field technicians.
+Use these tools to reinforce preparation, crew communication, disciplined work,
+and learning, not to replace professional judgment or required procedures.
 
-## What's Inside
+## Start Here
 
-```
-trades-field-kit/
-├── docs/
-│   ├── umbrella-panels.md          # The 8-panel field reference content
-│   ├── field-checklists/            # Printable checklists
-│   │   ├── pm-checklist.md          # Planned maintenance
-│   │   ├── pressure-washing.md      # Pressure washing safety & procedure
-│   │   ├── no-cool.md               # No-cooling troubleshooting flow
-│   │   ├── no-heat.md               # No-heat troubleshooting flow
-│   │   └── electrical-safety.md     # LOTO & electrical safety
-│   └── diagrams/                    # Mermaid/SVG diagram sources
-│       ├── refrigeration-cycle.md
-│       ├── thermostat-wiring.md
-│       └── motor-circuit.md
-├── calculators/                      # CLI calculators
-│   ├── superheat.py
-│   ├── subcooling.py
-│   ├── ohms-law.py
-│   ├── airflow-cfm.py
-│   └── voltage-drop.py
-├── templates/                        # Field documentation templates
-│   ├── field-preflight.md           # Pre-flight and toolbox-talk discussion aid
-│   ├── service-note.md
-│   ├── customer-summary.md
-│   └── parts-list.md
-├── scripts/                          # CLI helper scripts
-│   └── file-issue.sh                # Interactive issue filing from terminal
-├── skill/                            # Perplexity Computer skill
-│   └── trades-field-work.skill.md
-└── references/
-    └── sources.md                    # Public source citations
-```
+- **Crew discussion:** [Field Pre-Flight & Toolbox Talk Aid](templates/field-preflight.md)
+- **Phone access:** [Mobile Quick Start](docs/MOBILE-QUICKSTART.md)
+- **Field reference:** [Umbrella Panels](docs/umbrella-panels.md) and [printable PDF](Handy_Helper_Umbrella_Field_Reference.pdf)
+- **Task aids:** [Checklists](docs/field-checklists/) and [diagrams](docs/diagrams/)
+- **Calculations:** [CLI calculators and usage](calculators/README.md)
+- **More tools:** [Documentation templates](templates/) and [TRADES skill](skill/trades-field-work/SKILL.md)
 
-## Quick Links
+## Use Responsibly
 
-- **Toolbox Talk Aid:** [Field Pre-Flight & Toolbox Talk Aid](templates/field-preflight.md): discussion prompts, not a replacement for required paperwork
-- **Mobile Quick Start:** [docs/MOBILE-QUICKSTART.md](docs/MOBILE-QUICKSTART.md) — bookmark on your phone
-- **File an Issue:** [New Issue](https://github.com/M3GA-MAK3R/trades-field-kit/issues/new/choose)
-- **PDF Field Reference:** [Handy Helper Umbrella PDF](Handy_Helper_Umbrella_Field_Reference.pdf)
-
-## Field Discussion and Record Boundaries
-
-Use the [Field Pre-Flight & Toolbox Talk Aid](templates/field-preflight.md) to
-reinforce preparation, communication, discipline, and professional accountability.
-It does not replace required paperwork, approved procedures, training, supervision,
-authorization, or work ethic, and completing it is not proof of safety or compliance.
+The toolbox-talk aid supports discussion, not sign-off. It does not replace
+official paperwork, employer safety programs, equipment-specific procedures,
+training, supervision, authorization, discipline, or work ethic.
+Completing a prompt is not proof that work is safe or complete.
 
 Publish blank templates and sanitized examples only. Keep completed job records,
 customer contacts, facility details, and job photos in employer-approved private
-systems, not in this repository or its issues and pull requests. Share portfolio
-examples only with appropriate permission and sensitive details removed.
+systems, not in public commits, issues, or pull requests.
 
-## Filing Issues
+Verify technical values against manufacturer documentation and applicable codes.
+Follow approved energy-control procedures; this kit does not authorize energized
+work or refrigerant adjustments. See [sources and data limitations](references/sources.md).
 
-Three ways to file an issue — pick what works from your phone or desk:
+## Contribute
 
-### 1. Interactive CLI Script (best for terminal/Termux)
-
-```bash
-# Clone and run the interactive script
-./scripts/file-issue.sh
-```
-
-Walks you through equipment type, symptom, readings, and power state
-with numbered menus. Assembles a structured issue and submits via `gh`.
-
-### 2. Markdown Template (CLI)
-
-```bash
-gh issue create --repo M3GA-MAK3R/trades-field-kit \
-  --template field-issue-cli.md
-```
-
-Opens your editor pre-filled with the field issue template. Edit, save, quit.
-
-Note: YAML interactive forms (dropdowns/checkboxes) do NOT work with the
-`gh` CLI — only the markdown template does.
-
-### 3. Browser / GitHub Mobile App
-
-- **Template chooser:** [github.com/M3GA-MAK3R/trades-field-kit/issues/new/choose](https://github.com/M3GA-MAK3R/trades-field-kit/issues/new/choose)
-- **Direct to field issue form:** [github.com/M3GA-MAK3R/trades-field-kit/issues/new?template=field-issue.yml](https://github.com/M3GA-MAK3R/trades-field-kit/issues/new?template=field-issue.yml)
-
-The browser and mobile app render the YAML forms as interactive dropdowns,
-checkboxes, and required fields — the full experience.
-
-### Or open in browser from CLI
-
-```bash
-gh issue create --repo M3GA-MAK3R/trades-field-kit --web
-```
-
-## Quick Start
-
-### Calculators
-
-```bash
-# Superheat calculation
-python3 calculators/superheat.py --suction-temp 55 --suction-pressure 120 --refrigerant R410A
-
-# Subcooling calculation
-python3 calculators/subcooling.py --liquid-temp 95 --head-pressure 340 --refrigerant R410A
-
-# Ohm's Law
-python3 calculators/ohms-law.py --volts 240 --amps 15
-
-# Voltage drop
-python3 calculators/voltage-drop.py --amps 15 --length 100 --wire-gauge 12
-```
-
-### The Handy Helper Umbrella PDF
-
-A printable 8-panel field reference guide covering:
-1. Safety First — LOTO, PPE, wet-work precautions
-2. Refrigeration Cycle Diagram
-3. Superheat & Subcooling Quick Guide
-4. Thermostat Low-Voltage Wiring
-5. Contactor & Capacitor Motor Circuits
-6. Heat Pump Sequence & Defrost
-7. Electrical Pocket Formulas
-8. Troubleshooting Decision Flow
-
-## Safety Disclaimer
-
-This toolkit provides general reference information for educational purposes. Always:
-- Verify against manufacturer specifications and local codes
-- Follow OSHA lockout/tagout procedures
-- Consult the NEC and local AHJ for code-compliant work
-- De-energize and verify before working on electrical equipment
-
-## License
-
-MIT — free to use, modify, and share. See [references/sources.md](references/sources.md) for source attributions.
-
-## Inspired By
-
-- [Anthony's Cool School HVAC Training](https://hvac.anthonyscoolschool.com/) — hands-on HVAC education program
-- [HVAC School](https://hvacrschool.com/) — practitioner-focused HVAC/R training resources
-- [OSHA](https://www.osha.gov/control-hazardous-energy) — lockout/tagout standards
+Read [CONTRIBUTING.md](CONTRIBUTING.md), then submit non-sensitive feedback through
+the [issue templates](https://github.com/M3GA-MAK3R/trades-field-kit/issues/new/choose).
+Run regression tests with `python3 -m unittest discover -s tests -v` (Python 3.10+).
+See the [MIT license](LICENSE) for reuse terms.

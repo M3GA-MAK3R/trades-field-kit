@@ -30,11 +30,16 @@ All contributions must:
 
 ## Calculator Guidelines
 
-- Python 3, no external dependencies (stdlib only)
+- Python 3.10+, no external dependencies (stdlib only)
 - Include `--help` and argparse with clear descriptions
-- Output a formatted result with interpretation (normal/high/low ranges)
+- Output a formatted result with units and limitations; do not label a result
+  normal/high/low without an applicable, cited equipment-specific target
+- Cite numeric data sources and reject unsupported ranges instead of silently
+  clamping or extrapolating
 - End with a "verify with manufacturer specs" disclaimer
-- Test before submitting: `python3 calculator.py --help`
+- Add regression tests for known values, boundaries, and invalid inputs
+- Test before submitting: `python3 -m unittest discover -s tests -v`
+- Smoke-test the changed calculator's `--help` and documented examples
 
 ## Checklist Guidelines
 

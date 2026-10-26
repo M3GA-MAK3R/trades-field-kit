@@ -12,7 +12,7 @@
 | File a field issue | [New Issue](https://github.com/M3GA-MAK3R/trades-field-kit/issues/new?template=field-issue.yml) |
 | Request a feature | [Request](https://github.com/M3GA-MAK3R/trades-field-kit/issues/new?template=feature-request.yml) |
 | Browse field reference | [Umbrella Panels](https://github.com/M3GA-MAK3R/trades-field-kit/blob/main/docs/umbrella-panels.md) |
-| Calculators | [Calculator Help](https://github.com/M3GA-MAK3R/trades-field-kit/tree/main/calculators) |
+| Calculators (terminal, not browser forms) | [Calculator Help](../calculators/README.md) |
 | Safety (LOTO) | [OSHA.gov](https://www.osha.gov/control-hazardous-energy) |
 
 The toolbox-talk aid is a blank discussion reference, not a saved mobile form,

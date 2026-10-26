@@ -32,6 +32,30 @@
 
 ## Refrigerant & PT Chart References
 
+### R410A Calculator Data
+
+The shared table in `calculators/pt_data.py` is transcribed from
+[Honeywell's Genetron AZ-20 (R410A) pressure-based PT chart](https://prod-edam.honeywell.com/content/dam/honeywell-edam/pmt/oneam/en-us/refrigerants/documents/pmt-am-genetron-aZ20-pressure-temp-chart-tech-tool1.pdf),
+document 3193 / G525-093, v5, February 2019. The chart gives temperature in
+degrees Fahrenheit at gauge pressure in PSIG, with 5-PSIG intervals from
+10 through 615 PSIG. Honeywell uses its single temperature column in both the
+superheat and subcooling examples.
+
+Both calculators share these values and linearly interpolate between entries.
+They reject pressures outside the table, rather than clamping or extrapolating.
+Anchor checks include 120 PSIG = 40.6°F, 200 PSIG = 69.6°F,
+340 PSIG = 104.7°F, and 430 PSIG = 122.0°F from the linked chart.
+The printable reference's pressure conversions use the same shared table.
+These are pressure-temperature conversions, not operating or charging targets.
+
+R22 and R134A tables are legacy approximations retained for compatibility; their
+values were not revalidated in this correction. Do not treat the R410A regression
+tests as verification of those tables or the other calculators. Unlisted
+refrigerants, including R32 and R454B, are unsupported; never substitute this
+R410A curve. Consult current refrigerant and equipment manufacturer documentation.
+
+### General References
+
 7. **EPA Section 608 Certification**
    - https://www.epa.gov/section608
    - Required for handling refrigerants. Technicians must be certified.

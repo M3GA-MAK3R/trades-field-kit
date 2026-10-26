@@ -19,6 +19,8 @@ from reportlab.lib.enums import TA_LEFT, TA_CENTER
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfbase import pdfmetrics
 
+from calculators.pt_data import R410A_SOURCE_URL, SAT_TEMP_R410A
+
 # Design palette (Nexus)
 BG = HexColor("#F7F6F2")
 SURFACE = HexColor("#F9F8F5")
@@ -175,15 +177,17 @@ panel2 = [
     Paragraph("    ^       v", code_style),
     Paragraph("    &lt;-- METERING DEVICE --&gt;", code_style),
     Spacer(1, 3),
-    Paragraph("Pressure Zones (R410A approx)", heading),
-    Paragraph("<b>High side:</b> 350-450 PSIG, 100-120&#176;F saturated", body_small),
-    Paragraph("<b>Low side:</b> 100-140 PSIG, 40-55&#176;F saturated", body_small),
+    Paragraph("R410A PT Conversions<super>10</super>", heading),
+    Paragraph(f"350-450 PSIG corresponds to {SAT_TEMP_R410A[350]:.1f}-{SAT_TEMP_R410A[450]:.1f}&#176;F saturated", body_small),
+    Paragraph(f"100-140 PSIG corresponds to {SAT_TEMP_R410A[100]:.1f}-{SAT_TEMP_R410A[140]:.1f}&#176;F saturated", body_small),
+    Paragraph("Conversions only, not operating or charging targets.", body_small),
     Spacer(1, 2),
     Paragraph("Metering Devices: TXV (best efficiency) | Fixed piston (charge-sensitive) | Cap tube (small systems) | EEV (electronic, variable)", body_small),
 ]
 sources2 = [
     '2. HVAC School: <a href="https://www.hvacrschool.com/" color="#01696F">https://www.hvacrschool.com/</a>',
     '3. Anthony\'s Cool School HVAC Training: <a href="https://hvac.anthonyscoolschool.com/" color="#01696F">https://hvac.anthonyscoolschool.com/</a>',
+    f'10. Honeywell AZ-20 PT chart (Feb 2019): <a href="{R410A_SOURCE_URL}" color="#01696F">{R410A_SOURCE_URL}</a>',
 ]
 
 # --- Panel 3: Superheat & Subcooling ---
@@ -350,7 +354,7 @@ sources8 = [
 ]
 
 # --- Build PDF ---
-output_path = "/home/user/workspace/Handy_Helper_Umbrella_Field_Reference.pdf"
+output_path = str(Path(__file__).resolve().parent / "Handy_Helper_Umbrella_Field_Reference.pdf")
 
 doc = SimpleDocTemplate(
     output_path,
