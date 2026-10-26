@@ -9,6 +9,7 @@
 | What you need | Tap this |
 |--------------|----------|
 | Prepare a crew discussion | [Field Pre-Flight & Toolbox Talk Aid](../templates/field-preflight.md) |
+| Arrived early or site contact not answering | [Arrival, Contact, and Waiting](../templates/field-preflight.md#arrival-contact-and-waiting) |
 | File a field issue | [New Issue](https://github.com/M3GA-MAK3R/trades-field-kit/issues/new?template=field-issue.yml) |
 | Request a feature | [Request](https://github.com/M3GA-MAK3R/trades-field-kit/issues/new?template=feature-request.yml) |
 | Browse field reference | [Umbrella Panels](https://github.com/M3GA-MAK3R/trades-field-kit/blob/main/docs/umbrella-panels.md) |

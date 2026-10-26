@@ -36,6 +36,46 @@
 - **Required records:** Which work order, permits, risk assessment, and other
   employer-required documents apply, and where are they maintained?
 
+## Arrival, Contact, and Waiting
+
+- **Before dispatch:** What arrival/check-in window, approved entrance, parking
+  location, escort, access restrictions, and contact method have been agreed?
+  Who is the primary site contact, backup contact, and dispatch/supervisor escalation
+  contact? Keep their details in the approved private system.
+- **Arrived early:** Have we distinguished arrival time from the agreed contact
+  and work-start window? Use the agreed early-arrival check-in method, if any;
+  do not assume the contact is available early or that arrival authorizes access.
+- **Initial check-in:** Through the approved channel, communicate who we are,
+  the work-order reference, that we have arrived, and a callback request.
+  Share only necessary information and do not disclose access codes or sensitive
+  site details in unsecured messages.
+- **No answer:** What contact attempts, follow-up interval, and escalation order
+  have the shop and site agreed? Use approved backup contacts and dispatch/supervisor
+  channels, not guessed contacts or repeated calls on an invented schedule.
+  If no plan exists, ask dispatch/supervision for direction.
+- **Where to wait:** Is there an approved, safe waiting location that keeps
+  entrances, exits, traffic, and emergency access clear? If not, remain at a safe,
+  lawful off-site location and tell dispatch where you can be reached.
+- **Waiting boundary:** No response is not permission to enter, start work,
+  access equipment, bypass security, or follow someone through a controlled entrance.
+  Follow the shop/site instructions; do not begin work merely to appear productive.
+  Review permitted manuals or the work scope only if safe and allowed; do not
+  unload tools, stage equipment, or take site photos without the applicable permission.
+- **Contact reached:** Confirm the contact's role and authority. Read back the
+  equipment/task, approved scope, access/escort arrangements, affected operations,
+  restrictions, and required permits or approvals. Ask for clarification and
+  confirm mutual understanding before proceeding. Site access permission does
+  not replace task authorization or the crew's safety responsibilities.
+- **Still waiting or conditions change:** Who decides whether to continue waiting,
+  leave, redirect, or reschedule, and when is the next agreed check-in?
+  Escalate unsafe waiting conditions or a changed scope; do not make an
+  unauthorized start or silently abandon the assignment. For an actual emergency,
+  follow the applicable site/emergency plan, not the routine no-answer sequence.
+- **Private record and handoff:** In the official system, record arrival time,
+  contact attempts, responses, instructions, waiting status, next check-in/owner,
+  and departure or revised appointment as applicable. Keep the record factual,
+  not accusatory; this aid is not a timesheet or billing authorization.
+
 ## Hazards and Approved Controls
 
 - **Hazard discussion:** What could hurt us or someone nearby? Consider electrical

@@ -92,6 +92,28 @@ class ReferenceBoundaryTests(unittest.TestCase):
                 self.assertIn("authorized readings", content)
                 self.assertIn("job record", content)
 
+    def test_arrival_contact_and_waiting_boundaries(self):
+        content = (ROOT / "templates/field-preflight.md").read_text()
+        section = content.split("## Arrival, Contact, and Waiting\n", 1)[1].split(
+            "\n## Hazards and Approved Controls", 1
+        )[0]
+        for required in (
+            "Before dispatch", "Arrived early", "Initial check-in", "No answer",
+            "backup contact", "agreed contact", "safe waiting location",
+            "No response is not permission", "bypass security",
+            "Read back", "mutual understanding", "task authorization",
+            "reschedule", "next agreed check-in", "Private record and handoff",
+            "not a timesheet or billing authorization",
+        ):
+            with self.subTest(required=required):
+                self.assertIn(required, section)
+        self.assertNotIn("- [ ]", section)
+        self.assertNotRegex(section, r"\b(?:10|15|30)\s*(?:min|minutes)\b")
+        mobile = (ROOT / "docs/MOBILE-QUICKSTART.md").read_text()
+        self.assertIn(
+            "../templates/field-preflight.md#arrival-contact-and-waiting", mobile
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
