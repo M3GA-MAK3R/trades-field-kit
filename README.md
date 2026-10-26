@@ -25,6 +25,7 @@ trades-field-kit/
 │   ├── airflow-cfm.py
 │   └── voltage-drop.py
 ├── templates/                        # Field documentation templates
+│   ├── field-preflight.md           # Pre-flight and toolbox-talk discussion aid
 │   ├── service-note.md
 │   ├── customer-summary.md
 │   └── parts-list.md
@@ -38,9 +39,22 @@ trades-field-kit/
 
 ## Quick Links
 
+- **Toolbox Talk Aid:** [Field Pre-Flight & Toolbox Talk Aid](templates/field-preflight.md): discussion prompts, not a replacement for required paperwork
 - **Mobile Quick Start:** [docs/MOBILE-QUICKSTART.md](docs/MOBILE-QUICKSTART.md) — bookmark on your phone
 - **File an Issue:** [New Issue](https://github.com/M3GA-MAK3R/trades-field-kit/issues/new/choose)
 - **PDF Field Reference:** [Handy Helper Umbrella PDF](Handy_Helper_Umbrella_Field_Reference.pdf)
+
+## Field Discussion and Record Boundaries
+
+Use the [Field Pre-Flight & Toolbox Talk Aid](templates/field-preflight.md) to
+reinforce preparation, communication, discipline, and professional accountability.
+It does not replace required paperwork, approved procedures, training, supervision,
+authorization, or work ethic, and completing it is not proof of safety or compliance.
+
+Publish blank templates and sanitized examples only. Keep completed job records,
+customer contacts, facility details, and job photos in employer-approved private
+systems, not in this repository or its issues and pull requests. Share portfolio
+examples only with appropriate permission and sensitive details removed.
 
 ## Filing Issues
 

@@ -8,11 +8,21 @@
 
 | What you need | Tap this |
 |--------------|----------|
+| Prepare a crew discussion | [Field Pre-Flight & Toolbox Talk Aid](../templates/field-preflight.md) |
 | File a field issue | [New Issue](https://github.com/M3GA-MAK3R/trades-field-kit/issues/new?template=field-issue.yml) |
 | Request a feature | [Request](https://github.com/M3GA-MAK3R/trades-field-kit/issues/new?template=feature-request.yml) |
 | Browse field reference | [Umbrella Panels](https://github.com/M3GA-MAK3R/trades-field-kit/blob/main/docs/umbrella-panels.md) |
 | Calculators | [Calculator Help](https://github.com/M3GA-MAK3R/trades-field-kit/tree/main/calculators) |
 | Safety (LOTO) | [OSHA.gov](https://www.osha.gov/control-hazardous-energy) |
+
+The toolbox-talk aid is a blank discussion reference, not a saved mobile form,
+required job paperwork, or proof of safe work. Use it to reinforce preparation,
+discipline, communication, and work ethic, never to replace approved procedures,
+training, supervision, or authorization.
+
+Keep completed job records, customer contacts, facility details, and job photos
+in employer-approved private systems. This public repository and its issues are
+for blank templates, sanitized examples, and non-sensitive project feedback only.
 
 ---
 
