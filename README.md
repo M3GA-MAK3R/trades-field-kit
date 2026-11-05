@@ -15,6 +15,9 @@ and learning, not to replace professional judgment or required procedures.
 - **Calculations:** [CLI calculators and usage](calculators/README.md)
 - **More tools:** [Documentation templates](templates/) and [TRADES skill](skill/trades-field-work/SKILL.md)
 
+## Operational Addendum: Boundary Field Kit
+Added tactical protocols for maintaining situational awareness and personal safety under high mechanical stress. See `boundaries-field-kit.md` for conversational scripts to manage job site interference (projected anger, guilt-tripping, sarcasm) and mental frameworks for isolating destructive stress telemetry during critical diagnostic work.
+
 ## Use Responsibly
 
 The toolbox-talk aid supports discussion, not sign-off. It does not replace
